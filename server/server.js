@@ -7,8 +7,10 @@ const app = express();
 app.use(express.json());
 
 //import routes
+import userRoutes from "./routes/userRoute.js";
 
 //routes
+app.use("/api/users", userRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`app is running on ${process.env.PORT}`);
