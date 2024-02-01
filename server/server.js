@@ -11,10 +11,12 @@ app.use(cookieParser());
 //import routes
 import userRoutes from "./routes/userRoute.js";
 import authRoutes from "./routes/authRoute.js";
+import listingRoute from "./routes/listingRoute.js";
 
 //routes
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/listing", listingRoute);
 
 app.listen(process.env.PORT, () => {
   console.log(`app is running on ${process.env.PORT}`);
