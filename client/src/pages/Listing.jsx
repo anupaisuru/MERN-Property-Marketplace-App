@@ -44,6 +44,18 @@ export default function Listing() {
     fetchListing();
   }, [params.listingId]);
 
+  const handleContactLandlord = () => {
+    const landlordEmail = "landlord@example.com";
+    const subject = "Interested in your property";
+    const body = "Hello,I am interested in your property.";
+    const mailtoUrl = `mailto:${landlordEmail}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    // Open the user's default email client
+    window.location.href = mailtoUrl;
+  };
+
   return (
     <main>
       {loading && <p className="text-2xl text-center my-7">Loading...</p>}
@@ -133,6 +145,12 @@ export default function Listing() {
                 {listing.furnished ? "Furnished" : "Unfurnished"}
               </li>
             </ul>
+            <button
+              onClick={handleContactLandlord}
+              className="p-3 text-white uppercase rounded-lg bg-slate-700 hover:opacity-95"
+            >
+              Contact landlord
+            </button>
           </div>
         </div>
       )}
