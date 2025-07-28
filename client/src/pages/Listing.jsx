@@ -148,7 +148,7 @@ export default function Listing() {
               onClick={handleContactLandlord}
               className="p-3 text-white uppercase rounded-lg bg-slate-700 hover:opacity-95"
             >
-              Contact landlord
+              Contact Place
             </button>
           </div>
         </div>
