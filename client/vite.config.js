@@ -6,8 +6,9 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:5000",
-        secure: false,
+        target: "https://mern-property-marketplace-app.vercel.app",
+        secure: true,
+        changeOrigin: true,
       },
     },
   },
